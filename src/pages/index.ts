@@ -1,1 +1,1 @@
-export const store = {};
+export * from './Home';
