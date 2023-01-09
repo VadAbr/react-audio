@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import React from 'react';
-import { Home } from './pages';
-import { RouterErrorBoundary } from './components/RouterErrorBoundry';
+import { Home, Filters } from './pages';
+import { RouterErrorBoundary } from './components';
 import { Routes } from './constants';
 
 export const router = createBrowserRouter([
@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
   },
   {
     path: Routes.FILTERS,
-    element: <>filters</>,
+    element: <Filters />,
   },
   {
     path: Routes.NOT_FOUND,
