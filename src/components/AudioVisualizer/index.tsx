@@ -17,7 +17,7 @@ export const AudioVisualizer: FC<Props> = ({
   analyzer,
   lineWidth = 0.05,
   segments = 100,
-  height = 1,
+  height = 0.7,
   radius = 2,
   color = 'white',
 }) => {
