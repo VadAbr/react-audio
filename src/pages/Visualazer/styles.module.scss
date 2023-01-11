@@ -1,0 +1,25 @@
+.visualizerContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: relative;
+}
+
+.visualizerInputs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  input {
+    color: white;
+  }
+
+  audio {
+    width: 350px;
+  }
+}
