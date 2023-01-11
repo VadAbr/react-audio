@@ -4,5 +4,6 @@ export enum Routes {
   FLAPPY = '/flappy',
   SPATIAL_SOUND = '/spatial-sound',
   FILTERS = '/filters',
+  VISUALIZER = '/visualizer',
   NOT_FOUND = '*',
 }

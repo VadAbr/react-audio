@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import React from 'react';
-import { Home, Filters } from './pages';
+import { Home, Filters, Visualizer } from './pages';
 import { RouterErrorBoundary } from './components';
 import { Routes } from './constants';
 
@@ -11,19 +11,23 @@ export const router = createBrowserRouter([
   },
   {
     path: Routes.KARAOKE,
-    element: <>karaoke</>,
+    element: <RouterErrorBoundary />,
   },
   {
     path: Routes.FLAPPY,
-    element: <>flappy</>,
+    element: <RouterErrorBoundary />,
   },
   {
     path: Routes.SPATIAL_SOUND,
-    element: <>spatial-sound</>,
+    element: <RouterErrorBoundary />,
   },
   {
     path: Routes.FILTERS,
     element: <Filters />,
+  },
+  {
+    path: Routes.VISUALIZER,
+    element: <Visualizer />,
   },
   {
     path: Routes.NOT_FOUND,
