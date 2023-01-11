@@ -3,6 +3,8 @@ import { ChangeEvent, useRef, useState } from 'react';
 import { AudioAnalyzer, extendMeshLine } from '../../services';
 import { AudioVisualizer } from '../../components/AudioVisualizer';
 
+import songUrl from '../../assets/song.mp3';
+
 import styles from './styles.module.scss';
 
 extendMeshLine();
@@ -31,7 +33,7 @@ export const Visualizer = () => {
       <div className={styles.visualizerInputs}>
         <input type={'file'} accept={'audio/*'} onChange={onFileChange} />
 
-        <audio src={audioUrl ?? ''} controls ref={audioElemRef} />
+        <audio src={audioUrl ?? songUrl} controls ref={audioElemRef} />
       </div>
     </div>
   );
