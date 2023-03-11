@@ -1,0 +1,157 @@
+/* .notes-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    justify-self: stretch;
+    align-self: stretch;
+    border-radius: 0 0 8px 8px;
+    flex: 1 1 100%;
+    overflow: hidden;
+    border-top: 3px solid var(--color-blue);
+    /* border-right: 1px solid var(--color-blue);
+    border-bottom: 1px solid var(--color-blue);
+    border-left: 1px solid var(--color-blue);
+} */
+
+.virtual-keyboard {
+    width: 100%;
+    position: relative;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    justify-self: stretch;
+    align-self: stretch;
+    border-radius: 0 0 8px 8px;
+    flex: 0 1 40%;
+    border-top: 3px solid var(--color-darkblue);
+    filter: var(--shadow-l);
+    padding-left: clamp(10px, var(--size-s), 30px);
+    padding-right: clamp(10px, var(--size-s), 30px);
+    padding-bottom: clamp(10px, var(--size-s), 30px);
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    /* box-shadow: inset 3px 3px 5px var(--color-darkblue); */
+}
+
+.virtual-keyboard.midi-keyboard {
+    flex: 0 1 20%;
+}
+
+/* Raspberry PI Breakpoint */
+@media screen and (max-width: 480px) and (orientation: landscape) {
+    .virtual-keyboard {
+        display: none;
+    }
+}
+
+.virtual-keyboard::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 15%;
+    background: linear-gradient(180deg, var(--color-shadow), rgba(0, 0, 0, 0));
+    z-index: 3;
+}
+
+.virtual-keyboard.touch-enabled {
+    /* opacity: 0.5; */
+}
+
+.keyboard-note {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex-basis: calc(100% / 10);
+    flex-shrink: 0;
+    flex-grow: 0;
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-reverse), var(--color-offwhite));
+    color: var(--color-ink);
+    border-radius: 0 0 6px 6px;
+    z-index: 0;
+    padding-bottom: var(--size-s);
+    cursor: pointer;
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    /* transition: background-color ease-out .1s; */
+}
+
+.virtual-keyboard.midi-keyboard .keyboard-note {
+    /* flex: 0 1 20%; */
+    /* flex-basis: calc(100% / 88); */
+    flex: 1 1 auto;
+}
+
+.virtual-keyboard.midi-keyboard .keyboard-note.black-key {
+    --black-key-width: 20px;
+    flex: 0 0 var(--black-key-width);
+    /* display: none; */
+}
+
+.virtual-keyboard.touch-enabled .keyboard-note {
+    flex-basis: clamp(60px, 8vw, 100px);
+}
+
+.virtual-keyboard.touch-enabled .keyboard-note.black-key {
+    /* flex-basis: clamp(60px, 8vw, 100px); */
+    --black-key-width: clamp(40px, 5vw, 60px);
+}
+
+.keyboard-note:hover,
+.keyboard-note.black-key:hover {
+    background-color: var(--color-yellow);
+}
+
+.virtual-keyboard .keyboard-note.pressed,
+.virtual-keyboard .keyboard-note.black-key.pressed {
+    background: var(--color-lightblue);
+}
+
+.virtual-keyboard .keyboard-note.black-key {
+    --black-key-width: calc(100% / 10 / 1.5);
+    z-index: 1;
+    margin: 0 calc(var(--black-key-width) / 2 * -1);
+    flex-basis: var(--black-key-width);
+    height: 60%;
+    background: linear-gradient(90deg, var(--color-subdued), var(--color-darkblue));
+    color: var(--color-reverse);
+    border: none;
+    border-radius: 0px 0px 8px 8px;
+    filter: var(--shadow-l);
+}
+
+.virtual-keyboard .key-label {
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.virtual-keyboard.midi-keyboard .key-label {
+    display: none;
+}
+
+.virtual-keyboard.touch-enabled .key-label {
+    display: none;
+}
+

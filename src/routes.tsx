@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import React from 'react';
-import { Filters, Home, Visualizer } from './pages';
+import { Filters, Home, Visualizer, Synth } from './pages';
 import { RouterErrorBoundary } from './components';
 import { Routes } from './constants';
 
@@ -47,6 +47,13 @@ export const router = createBrowserRouter([
     element: <Visualizer />,
     handle: {
       linkName: 'Визуализатор',
+    },
+  },
+  {
+    path: Routes.SYNTH,
+    element: <Synth />,
+    handle: {
+      linkName: 'Синтезатор1',
     },
   },
   {

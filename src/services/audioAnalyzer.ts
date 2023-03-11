@@ -1,7 +1,7 @@
 export class AudioAnalyzer {
-  private ctx: AudioContext;
-  private analyzerNode: AnalyserNode;
-  private sourceNode: MediaElementAudioSourceNode;
+  private readonly ctx: AudioContext;
+  private readonly analyzerNode: AnalyserNode;
+  private readonly sourceNode: MediaElementAudioSourceNode;
 
   constructor(audioElement: HTMLAudioElement) {
     //Создание аудио контекста

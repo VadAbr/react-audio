@@ -1,0 +1,146 @@
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    gap: 5px;
+    flex: 1 1 auto;
+    color: var(--color-yellow);
+}
+
+.slider {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    flex-grow: 1;
+    width: clamp(60px, 8vw, 100px);
+}
+
+.slider-ticks {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    z-index: 1;
+}
+
+.slider-tick {
+    width: 20%;
+    height: 2px;
+    background-color: var(--color-border);
+    z-index: 0;
+}
+
+.slider-tick:first-child,
+.slider-tick:last-child {
+    width: 40%;
+}
+
+.slider-label {
+    text-align: center;
+}
+
+.slider-label.patch-option {
+    background: none;
+    color: var(--color-yellow);
+    overflow: visible;
+}
+
+.slider-label.patch-option::after {
+    --radio-size: 6px;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(-2px - var(--radio-size));
+    width: var(--radio-size);
+    height: var(--radio-size);
+    border: 1px solid var(--color-yellow);
+    border-radius: 100%;
+    transform: translateY(-50%);
+    /* color: pink; */
+}
+
+.slider-label.patch-option.active::after  {
+    background-color: var(--color-lightblue);
+    border-width: 2px;
+}
+
+.slider-value {
+    text-align: center;
+}
+
+.range-input-wrapper {
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    transform: translateX(-50%);
+    transform-origin: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.slider-wrapper input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: grab;
+    border: none;
+    transform: rotate(-90deg);
+    background: var(--color-border);
+    height: 2px;
+    width: 100%;
+    z-index: 3;
+}
+
+.slider-wrapper input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.slider-wrapper input[type="range"]::-moz-range-track {
+    /* background: var(--color-border); */
+}
+
+.slider-wrapper input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: var(--input-width, clamp(40px, 8vw, 100px));
+    background: linear-gradient(90deg, var(--color-blue), var(--color-darkblue));
+    aspect-ratio: 3 / 7;
+    border: clamp(2px, 0.5vw, 6px) solid var(--color-yellow);
+    border-radius: var(--size-l);
+    filter: var(--shadow-l);
+ }
+
+.slider-wrapper input[type="range"]::-moz-range-thumb {
+    height: var(--input-width, clamp(40px, 8vw, 100px));
+    background: linear-gradient(90deg, var(--color-blue), var(--color-darkblue));
+    aspect-ratio: 3 / 7;
+    border: clamp(2px, 0.5vw, 6px) solid var(--color-yellow);
+    border-radius: var(--size-l);
+    filter: var(--shadow-l);
+}
+
+@media screen and (max-width: 768px) {
+}
+
+/* Raspberry PI Breakpoint */
+@media screen and (max-width: 480px) and (orientation: landscape) {
+    .slider {
+        width: 8vw;
+    }
+}
+
+
