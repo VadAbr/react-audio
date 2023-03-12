@@ -10,7 +10,7 @@ import VirtualKeyboard from '../virtual-keyboard/virtual-keyboard';
 
 import './synth.css';
 
-export default function Synth(props) {
+export default function Synth() {
   // Synth Active State
   const [synthActive, setSynthActive] = useState(false);
   let synthActiveRef = useRef();

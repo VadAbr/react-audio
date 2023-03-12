@@ -1,7 +1,7 @@
 import { Canvas } from '@react-three/fiber';
 import { ChangeEvent, useRef, useState } from 'react';
 import { AudioAnalyzer, extendMeshLine } from '../../services';
-import { AudioVisualizer } from '../../components/AudioVisualizer';
+import { AudioVisualizer } from '../../components';
 
 import styles from './styles.module.scss';
 

@@ -1,0 +1,1 @@
+export { SpatialSound } from './SpatialSound';

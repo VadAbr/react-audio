@@ -1,8 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Waves from '../icons/waves';
 import WaveIcons from '../icons/wave-icons';
 import Slider from '../slider/slider';
-import { Logo } from '../icons/logo.js';
 import { effectsSettings } from '../../midi-config';
 import { getNameFromNoteNumber } from '../../helpers/helpers';
 
