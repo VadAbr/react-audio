@@ -8,7 +8,7 @@ export const Home = () => {
     <div data-testid="home" className={styles.container}>
       <ul>
         {routes.map((el) => (
-          <li key={el.path}>
+          <li data-testid="link" key={el.path}>
             <Link to={el.path ?? ''}>{el.handle.linkName}</Link>
           </li>
         ))}

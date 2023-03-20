@@ -4,10 +4,21 @@ import { Home } from './Home';
 import '@testing-library/jest-dom';
 
 describe('Home page', () => {
-  it('Successfully rendered ', () => {
+  beforeEach(() => {
     render(<Home />, { wrapper: BrowserRouter });
+  });
 
-    expect(screen.getByTestId('home')).toBeTruthy();
-    expect(screen.getByTestId('home')).toBeInTheDocument();
+  it('Page is rendered ', () => {
+    const element = screen.getByTestId('home');
+
+    expect(element).toBeTruthy();
+    expect(element).toBeInTheDocument();
+  });
+
+  it('Links is rendered ', () => {
+    const linksElements = screen.getAllByTestId('link');
+
+    expect(linksElements).toBeTruthy();
+    expect(linksElements).not.toHaveLength(0);
   });
 });
