@@ -25,7 +25,7 @@ export const Visualizer = () => {
   };
 
   return (
-    <div className={styles.visualizerContainer}>
+    <div data-testid="visualizer" className={styles.visualizerContainer}>
       <Canvas>{analyzer && <AudioVisualizer analyzer={analyzer} />}</Canvas>
 
       <div className={styles.visualizerInputs}>
