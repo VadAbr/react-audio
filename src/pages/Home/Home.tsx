@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 
 export const Home = () => {
   return (
-    <div className={styles.container}>
+    <div data-testid="home" className={styles.container}>
       <ul>
         {routes.map((el) => (
           <li key={el.path}>
